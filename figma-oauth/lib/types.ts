@@ -42,6 +42,7 @@ export interface FigmaOAuthTokenRefreshParam {
  * [Authenticate users](https://www.figma.com/developers/api#auth-oauth2)
  */
 export interface FigmaOAuthTokenResponse {
+  user_id: string;
   access_token: string;
   expires_in: number;
   refresh_token: string;
@@ -54,3 +55,9 @@ export interface FigmaOAuthTokenRefreshResponse {
   access_token: string;
   expires_in: number;
 }
+
+export type OAuthStage =
+  | "started"
+  //
+  | "authorize"
+  | "token";
